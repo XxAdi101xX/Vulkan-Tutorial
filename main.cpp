@@ -494,7 +494,7 @@ private:
         createInfo.enabledExtensionCount = static_cast<uint32_t>(deviceExtensions.size());
         createInfo.ppEnabledExtensionNames = deviceExtensions.data();
 
-        // No long neccessary with newer implementations of vulcan because
+        // No long neccessary with newer implementations of vulkan because
         // there is not any distinctions between instance and device specific
         // validation, but kept here for reverse compatibility
         if (enableValidationLayers) {
@@ -517,7 +517,7 @@ private:
 
         VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats);
         VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModes);
-        VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities);
+        VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities); // resolution of swap chain images
 
         // have 1 more than minimum in the case that driver may have to do some
         // internal operations before we acquire another image to render to
